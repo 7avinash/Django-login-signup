@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>Welcome {{user}} </h1>
+
+	<h3>
+		{% for person in phone %}
+			{{person.phone_number}}
+		{% endfor %}
+	</h3>
+
+	<form method = 'post'>
+		{% csrf_token %}
+		<input type='submit' value='logout' name='logout'>
+	</form>
+{% endblock content %}

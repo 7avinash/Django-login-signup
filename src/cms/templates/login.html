@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class='col-sm-6 col-sm-offset-3'>
+	<h1>Login Here</h1>
+
+	<form method='post'>
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type='submit' value='login'>
+	</form>
+	{{block.super}}
+	</div>
+{% endblock content %}
